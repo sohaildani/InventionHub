@@ -1,0 +1,40 @@
+<!--
+<div style="text-align:center">
+    <h2>{{ invention.name }}</h2>
+    <h2>{{ invention.inventor }}</h2>
+    <h2>{{ invention.year }}</h2>
+  </div>
+-->
+<div *ngFor="let i of inventions">
+  <div class="invention">
+    <span><b>Name: </b>{{i.name}} || </span>
+    <span><b>Inventor: </b>{{i.inventor}} || </span>
+    <span><b>Year: </b>{{i.year}}</span>
+    <span><button class="btn btn-primary" (click) = "details(i.id)">details</button></span>
+  </div>
+</div>
+<hr>
+
+<div class="invention-creator">
+<!--<label>{{nameModel}}</label> -->
+<div>
+  <input [(ngModel)]="nameModel" placeholder="enter name" class="form-control">
+</div>
+<hr>
+<!--<label>{{inventorModel}}</label>-->
+<div>
+  <input [(ngModel)]="inventorModel" placeholder="enter inventor" class="form-control">
+</div>
+<hr>
+<!--<label>{{yearModel}}</label> -->
+<div>
+  <input [(ngModel)]="yearModel" placeholder="enter year" class="form-control">
+</div>
+<hr>
+<div>
+  <textarea type="textarea" rows="4" cols="20" [(ngModel)]="detailsModel" placeholder="details" class ="form-control"></textarea>
+</div>
+<br>
+
+<button class="btn btn-primary" (click)="createInvention()">create invention</button>
+</div>
